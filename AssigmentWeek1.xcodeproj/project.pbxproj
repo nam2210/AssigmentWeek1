@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94869131E584E00009A0507 /* MyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94869121E584E00009A0507 /* MyLabel.swift */; };
+		C951C2C11E58331F00AC3E62 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951C2C01E58331F00AC3E62 /* MovieDetailController.swift */; };
 		C953370E1E5825910003EDED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953370D1E5825910003EDED /* AppDelegate.swift */; };
-		C95337101E5825910003EDED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953370F1E5825910003EDED /* ViewController.swift */; };
 		C95337131E5825910003EDED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95337111E5825910003EDED /* Main.storyboard */; };
 		C95337151E5825910003EDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95337141E5825910003EDED /* Assets.xcassets */; };
 		C95337181E5825910003EDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95337161E5825910003EDED /* LaunchScreen.storyboard */; };
+		C95337221E5826A50003EDED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95337211E5826A50003EDED /* MainViewController.swift */; };
+		C95337261E5828BC0003EDED /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95337251E5828BC0003EDED /* MovieTableViewCell.swift */; };
+		CF406A2E4104800B90B1B52E /* Pods_AssigmentWeek1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64576777DD335D0E8384990 /* Pods_AssigmentWeek1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4624CA90A545B66E41D493A4 /* Pods-AssigmentWeek1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssigmentWeek1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssigmentWeek1/Pods-AssigmentWeek1.debug.xcconfig"; sourceTree = "<group>"; };
+		46BE23725C695A5B4FEB951C /* Pods-AssigmentWeek1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssigmentWeek1.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssigmentWeek1/Pods-AssigmentWeek1.release.xcconfig"; sourceTree = "<group>"; };
+		A64576777DD335D0E8384990 /* Pods_AssigmentWeek1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssigmentWeek1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C94869121E584E00009A0507 /* MyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLabel.swift; sourceTree = "<group>"; };
+		C951C2C01E58331F00AC3E62 /* MovieDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
 		C953370A1E5825910003EDED /* AssigmentWeek1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssigmentWeek1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C953370D1E5825910003EDED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C953370F1E5825910003EDED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C95337121E5825910003EDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C95337141E5825910003EDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C95337171E5825910003EDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C95337191E5825910003EDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C95337211E5826A50003EDED /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C95337251E5828BC0003EDED /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF406A2E4104800B90B1B52E /* Pods_AssigmentWeek1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A5AFC4EA5C3D03F193C187C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4624CA90A545B66E41D493A4 /* Pods-AssigmentWeek1.debug.xcconfig */,
+				46BE23725C695A5B4FEB951C /* Pods-AssigmentWeek1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C3177CCE54EE88EF2DF97B2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A64576777DD335D0E8384990 /* Pods_AssigmentWeek1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C95337011E5825900003EDED = {
 			isa = PBXGroup;
 			children = (
 				C953370C1E5825910003EDED /* AssigmentWeek1 */,
 				C953370B1E5825910003EDED /* Products */,
+				6A5AFC4EA5C3D03F193C187C /* Pods */,
+				C3177CCE54EE88EF2DF97B2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +85,14 @@
 			isa = PBXGroup;
 			children = (
 				C953370D1E5825910003EDED /* AppDelegate.swift */,
-				C953370F1E5825910003EDED /* ViewController.swift */,
 				C95337111E5825910003EDED /* Main.storyboard */,
 				C95337141E5825910003EDED /* Assets.xcassets */,
 				C95337161E5825910003EDED /* LaunchScreen.storyboard */,
 				C95337191E5825910003EDED /* Info.plist */,
+				C95337211E5826A50003EDED /* MainViewController.swift */,
+				C95337251E5828BC0003EDED /* MovieTableViewCell.swift */,
+				C951C2C01E58331F00AC3E62 /* MovieDetailController.swift */,
+				C94869121E584E00009A0507 /* MyLabel.swift */,
 			);
 			path = AssigmentWeek1;
 			sourceTree = "<group>";
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C953371C1E5825910003EDED /* Build configuration list for PBXNativeTarget "AssigmentWeek1" */;
 			buildPhases = (
+				224FF212924C8AD5A4A57D12 /* [CP] Check Pods Manifest.lock */,
 				C95337061E5825900003EDED /* Sources */,
 				C95337071E5825900003EDED /* Frameworks */,
 				C95337081E5825900003EDED /* Resources */,
+				9C2EC8B0BE0DB8E92271A5A9 /* [CP] Embed Pods Frameworks */,
+				A1B89638680D770E0A01E324 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +132,7 @@
 				TargetAttributes = {
 					C95337091E5825900003EDED = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XKS9DFKN47;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,13 +168,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		224FF212924C8AD5A4A57D12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C2EC8B0BE0DB8E92271A5A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AssigmentWeek1/Pods-AssigmentWeek1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1B89638680D770E0A01E324 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AssigmentWeek1/Pods-AssigmentWeek1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C95337061E5825900003EDED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C95337101E5825910003EDED /* ViewController.swift in Sources */,
 				C953370E1E5825910003EDED /* AppDelegate.swift in Sources */,
+				C94869131E584E00009A0507 /* MyLabel.swift in Sources */,
+				C951C2C11E58331F00AC3E62 /* MovieDetailController.swift in Sources */,
+				C95337221E5826A50003EDED /* MainViewController.swift in Sources */,
+				C95337261E5828BC0003EDED /* MovieTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +344,10 @@
 		};
 		C953371D1E5825910003EDED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4624CA90A545B66E41D493A4 /* Pods-AssigmentWeek1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XKS9DFKN47;
 				INFOPLIST_FILE = AssigmentWeek1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hnam.com.AssigmentWeek1;
@@ -268,8 +358,10 @@
 		};
 		C953371E1E5825910003EDED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46BE23725C695A5B4FEB951C /* Pods-AssigmentWeek1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XKS9DFKN47;
 				INFOPLIST_FILE = AssigmentWeek1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hnam.com.AssigmentWeek1;
@@ -297,6 +389,7 @@
 				C953371E1E5825910003EDED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
