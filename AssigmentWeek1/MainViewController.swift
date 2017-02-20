@@ -59,16 +59,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return movies.count
+            return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieTableViewCell
         
-        cell.lblTitle?.text = movies[indexPath.row].value(forKeyPath: "title") as? String
-        cell.lblDescription?.text = movies[indexPath.row].value(forKeyPath: "overview") as? String
+        cell.lblTitle?.text = filteredData[indexPath.row].value(forKeyPath: "title") as? String
+        cell.lblDescription?.text = filteredData[indexPath.row].value(forKeyPath: "overview") as? String
         
-        let url = baseUrl + (movies[indexPath.row].value(forKeyPath: "poster_path") as? String)!
+        let url = baseUrl + (filteredData[indexPath.row].value(forKeyPath: "poster_path") as? String)!
         //cell.ivThumbnail.setImageWith(NSURL(string: url) as! URL)
         
     
@@ -110,15 +110,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Use the filter method to iterate over all items in the data array
         // For each item, return true if the item should be included and false if the
         // item should NOT be included
-        print("searchText")
         self.filteredData = searchText.isEmpty ? self.movies : self.movies.filter { (item: NSDictionary) -> Bool in
             // If dataItem matches the searchText, return true to include it
             let title = item.value(forKeyPath: "title") as! String
-            return title.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            let isResult = title.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            return isResult
         }
-        print("reload")
         tableViewMovies.reloadData()
-        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        filteredData = movies
     }
 
     /*
@@ -189,6 +194,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 }else if let data = dataOrNil {
                                     if let responseDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as? NSDictionary {
                                         self.movies = responseDictionary["results"] as!  [NSDictionary]
+                                        self.filteredData = self.movies
                                         self.tableViewMovies.reloadData()
                                         //tell refresh control stop spinning
                                         refreshControl.endRefreshing();
