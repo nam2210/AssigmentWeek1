@@ -21,7 +21,28 @@ class MovieDetailController: UIViewController {
 
         // Do any additional setup after loading the view.
         let url = baseUrl + (data.value(forKeyPath: "poster_path") as? String)!
-        ivPoster.setImageWith(NSURL(string: url) as! URL)
+        //ivPoster.setImageWith(NSURL(string: url) as! URL)
+        
+        let imageRequest = URLRequest(url: NSURL(string: url) as! URL )
+        
+        ivPoster.setImageWith(imageRequest, placeholderImage: nil, success: {
+            (imageRequest, imageResponse, image) -> Void in
+            // imageResponse will be nil if the image is cached
+            if imageResponse != nil {
+                print("Image was NOT cached, fade in image")
+                self.ivPoster.alpha = 0.0
+                self.ivPoster.image = image
+                UIView.animate(withDuration: 0.5, animations: { () -> Void in
+                    self.ivPoster.alpha = 1.0
+                })
+            } else {
+                print("Image was cached so just update the image")
+                self.ivPoster.image = image
+            }
+        }, failure: {
+            (imageRequest, imageResponse, error) -> Void in
+        })
+
         
         initScrollView()
     }

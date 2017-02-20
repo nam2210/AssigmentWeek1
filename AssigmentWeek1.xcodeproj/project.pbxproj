@@ -11,10 +11,11 @@
 		C951C2C11E58331F00AC3E62 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951C2C01E58331F00AC3E62 /* MovieDetailController.swift */; };
 		C953370E1E5825910003EDED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953370D1E5825910003EDED /* AppDelegate.swift */; };
 		C95337131E5825910003EDED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95337111E5825910003EDED /* Main.storyboard */; };
-		C95337151E5825910003EDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95337141E5825910003EDED /* Assets.xcassets */; };
 		C95337181E5825910003EDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95337161E5825910003EDED /* LaunchScreen.storyboard */; };
 		C95337221E5826A50003EDED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95337211E5826A50003EDED /* MainViewController.swift */; };
 		C95337261E5828BC0003EDED /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95337251E5828BC0003EDED /* MovieTableViewCell.swift */; };
+		C9D0B83E1E59FC6300567580 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D0B83D1E59FC6300567580 /* Image.xcassets */; };
+		C9D0B8401E59FD5F00567580 /* TopRatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0B83F1E59FD5F00567580 /* TopRatingController.swift */; };
 		CF406A2E4104800B90B1B52E /* Pods_AssigmentWeek1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64576777DD335D0E8384990 /* Pods_AssigmentWeek1.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,11 +28,12 @@
 		C953370A1E5825910003EDED /* AssigmentWeek1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssigmentWeek1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C953370D1E5825910003EDED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95337121E5825910003EDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C95337141E5825910003EDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C95337171E5825910003EDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C95337191E5825910003EDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C95337211E5826A50003EDED /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C95337251E5828BC0003EDED /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		C9D0B83D1E59FC6300567580 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		C9D0B83F1E59FD5F00567580 /* TopRatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRatingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +88,14 @@
 			children = (
 				C953370D1E5825910003EDED /* AppDelegate.swift */,
 				C95337111E5825910003EDED /* Main.storyboard */,
-				C95337141E5825910003EDED /* Assets.xcassets */,
 				C95337161E5825910003EDED /* LaunchScreen.storyboard */,
 				C95337191E5825910003EDED /* Info.plist */,
 				C95337211E5826A50003EDED /* MainViewController.swift */,
 				C95337251E5828BC0003EDED /* MovieTableViewCell.swift */,
 				C951C2C01E58331F00AC3E62 /* MovieDetailController.swift */,
 				C94869121E584E00009A0507 /* MyLabel.swift */,
+				C9D0B83D1E59FC6300567580 /* Image.xcassets */,
+				C9D0B83F1E59FD5F00567580 /* TopRatingController.swift */,
 			);
 			path = AssigmentWeek1;
 			sourceTree = "<group>";
@@ -161,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C95337181E5825910003EDED /* LaunchScreen.storyboard in Resources */,
-				C95337151E5825910003EDED /* Assets.xcassets in Resources */,
+				C9D0B83E1E59FC6300567580 /* Image.xcassets in Resources */,
 				C95337131E5825910003EDED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +226,7 @@
 			files = (
 				C953370E1E5825910003EDED /* AppDelegate.swift in Sources */,
 				C94869131E584E00009A0507 /* MyLabel.swift in Sources */,
+				C9D0B8401E59FD5F00567580 /* TopRatingController.swift in Sources */,
 				C951C2C11E58331F00AC3E62 /* MovieDetailController.swift in Sources */,
 				C95337221E5826A50003EDED /* MainViewController.swift in Sources */,
 				C95337261E5828BC0003EDED /* MovieTableViewCell.swift in Sources */,

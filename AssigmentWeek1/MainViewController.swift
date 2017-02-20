@@ -10,18 +10,22 @@ import UIKit
 import AFNetworking
 import VHUD
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableViewMovies: UITableView!
     @IBOutlet weak var lblNetworkWarning: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let baseUrl = "http://image.tmdb.org/t/p/w500";
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         // Do any additional setup after loading the view.
-        tableViewMovies.delegate = self
+        //tableViewMovies.delegate = self
         tableViewMovies.dataSource = self
+        searchBar.delegate = self
         
         initNetworkWarning()
         
@@ -34,7 +38,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // add refresh control to table view
         tableViewMovies.insertSubview(refreshControl, at: 0)
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navigation bar for current view controller
+        self.navigationController?.isNavigationBarHidden = true;
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.isNavigationBarHidden = false;
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +69,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.lblDescription?.text = movies[indexPath.row].value(forKeyPath: "overview") as? String
         
         let url = baseUrl + (movies[indexPath.row].value(forKeyPath: "poster_path") as? String)!
-        cell.ivThumbnail.setImageWith(NSURL(string: url) as! URL)
+        //cell.ivThumbnail.setImageWith(NSURL(string: url) as! URL)
+        
+    
+        let imageRequest = URLRequest(url: NSURL(string: url) as! URL )
+        
+        cell.ivThumbnail.setImageWith(imageRequest, placeholderImage: nil, success: {
+            (imageRequest, imageResponse, image) -> Void in
+            // imageResponse will be nil if the image is cached
+            if imageResponse != nil {
+                print("Image was NOT cached, fade in image")
+                cell.ivThumbnail.alpha = 0.0
+                cell.ivThumbnail.image = image
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                    cell.ivThumbnail.alpha = 1.0
+                })
+            } else {
+                print("Image was cached so just update the image")
+                cell.ivThumbnail.image = image
+            }
+        }, failure: {
+            (imageRequest, imageResponse, error) -> Void in
+        })
+        
         
         return cell
     }
@@ -63,6 +100,26 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewMovies.deselectRow(at: indexPath, animated: true)
     }
     
+    var filteredData = [NSDictionary]()
+
+    
+    // This method updates filteredData based on the text in the Search Box
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        print("searchText")
+        self.filteredData = searchText.isEmpty ? self.movies : self.movies.filter { (item: NSDictionary) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            let title = item.value(forKeyPath: "title") as! String
+            return title.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        print("reload")
+        tableViewMovies.reloadData()
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -75,6 +132,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     */
     
     var movies = [NSDictionary]()
+    
     
     func loadMovies(){
         let apiKey = "7519cb3f829ecd53bd9b7007076dbe23"
@@ -97,6 +155,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 }else if let data = dataOrNil {
                                     if let responseDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as? NSDictionary {
                                         self.movies = responseDictionary["results"] as!  [NSDictionary]
+                                        self.filteredData = self.movies
                                         print("response: \(self.movies)")
                                         self.hideLoadingView()
                                         self.tableViewMovies.reloadData()
